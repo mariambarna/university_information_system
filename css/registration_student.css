@@ -1,0 +1,143 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+
+}
+body{
+    /* background: url('../assets/images/pict.jpg') no-repeat; */
+     background-size: cover;
+    /* background-repeat: no-repeat;
+    color: #fff;
+     background-position: center center; */
+     /* height: 100vh; */
+}
+.firrst{
+    height: 750px;
+    width: 600px;
+    margin: 80px auto;
+    padding: 50px auto 20px auto ;
+    background-position: center;
+      /* background-color: ;   */
+    /* background: url('../assets/images/.jpg') no-repeat; */
+    border-radius: 20px;
+    color: black;
+    font-size: 25px;
+    /* padding-top: auto; */
+}
+.main_section .firrst{
+    border: 1px solid black;
+    padding-left: 15px;
+    /* margin-bottom: 10px; */
+    margin-top: 30px;
+    background-color:rgb(245,245,245);
+    box-shadow: 5px 5px 10px grey;
+}
+.firrst h1 {
+    font-size: 30px;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 30px auto;
+    color: black;
+
+}
+.time .line{
+   float: left;
+   width: 40%;
+   /* font-size: 15px; */
+   padding: 5px;
+   border-radius: 10px;
+   outline: none;
+   box-sizing: border-box;
+
+}
+.time .some{
+    float: left;
+    width: 60%;
+    font-size: 15px;
+   padding: 5px;
+   border-radius: 10px;
+   outline: none;
+   box-sizing: border-box;
+
+ }
+ /* .time .some input{
+     width: 200px;
+     padding: 10px;
+
+
+ }  */
+.firrst button{
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding: 5px 10px;
+    width: 30%;
+    border: 0;
+    border-radius: 10px;
+    background-color: slategray;;
+    /* color: blue; */
+    position: relative;
+    margin-top: 25px;
+
+}
+
+/* .first input{
+   width: 50%;
+   margin: auto;
+   font-size: 15px;
+   padding: 5px;
+   border-radius: 10px;
+   outline: none;
+   box-sizing: border-box;
+
+
+} */
+.time .some input{
+    width: 80%;
+    margin: auto;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 10px;
+    outline: none;
+    box-sizing: border-box;
+}
+.time .some select{
+    width: 80%;
+    margin: auto;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 10px;
+    outline: none;
+    box-sizing: border-box;
+}
+/* .first select{
+    width: 50%;
+    margin: auto;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 10px;
+    outline: none;
+    box-sizing: border-box;
+     */
+
+ /* } */
+
+.but{
+    text-align: center;
+
+}
+
+
+/* .dash{
+
+} */
+
+
+.firrst button:hover{
+    color: darkblue;
+   
+}
+.firrst .but button:hover{
+    background: gray;
+}

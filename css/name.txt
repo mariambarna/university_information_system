@@ -1,0 +1,146 @@
+CREATE TABLE `user` (
+ `Serial_no` int(20) NOT NULL AUTO_INCREMENT,
+ `Id` varchar(22) NOT NULL,
+ `Password` varchar(50) NOT NULL,
+ `Email` varchar(50) NOT NULL,
+ `Userrole` varchar(50) NOT NULL,
+ `Status` varchar(50) NOT NULL,
+ `Addedon` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+ PRIMARY KEY (`Serial_no`),
+ UNIQUE KEY `Id` (`Id`),
+ UNIQUE KEY `Email` (`Email`)
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8
+
+
+
+
+
+
+CREATE TABLE `teacher` (
+ `Serial_no` int(20) NOT NULL AUTO_INCREMENT,
+ `Id` varchar(50) NOT NULL,
+ `Addedon` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+ PRIMARY KEY (`Serial_no`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8
+
+
+
+
+CREATE TABLE `assignment` (
+ `Serial_no` int(20) NOT NULL AUTO_INCREMENT,
+ `AssignmentID` varchar(50) NOT NULL,
+ `AssignmentHeadline` varchar(100) NOT NULL,
+ `AssignmentDetails` text NOT NULL,
+ `AssignmentSubject` varchar(50) NOT NULL,
+ `AssignmentDeadline` date NOT NULL,
+ `AssignmentType` varchar(20) NOT NULL,
+ `AssignmentFor` varchar(30) NOT NULL,
+ `Status` varchar(20) NOT NULL DEFAULT 'Pending',
+ `Addedon` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+ `Addedby` varchar(30) NOT NULL,
+ PRIMARY KEY (`Serial_no`),
+ UNIQUE KEY `AssignmentID` (`AssignmentID`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8
+
+
+CREATE TABLE `add_teacher` (
+ `Serial_no` int(20) NOT NULL AUTO_INCREMENT,
+ `Id` varchar(22) NOT NULL,
+ `Firstname` varchar(50) NOT NULL,
+ `Lastname` varchar(50) NOT NULL,
+ `Department` varchar(50) NOT NULL,
+ `PhoneNumber` varchar(22) NOT NULL,
+ `Email` varchar(50) NOT NULL,
+ `Address` varchar(100) NOT NULL,
+ `Password` varchar(50) NOT NULL,
+ `Addedon` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+ PRIMARY KEY (`Serial_no`),
+ UNIQUE KEY `Id` (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8
+
+
+
+CREATE TABLE `add_subject` (
+ `Serial_no` int(20) NOT NULL AUTO_INCREMENT,
+ `Shift` varchar(50) NOT NULL,
+ `Department` varchar(20) NOT NULL,
+ `SubjectCode` varchar(50) NOT NULL,
+ `SubjectName` varchar(100) NOT NULL,
+ `Credit` varchar(20) NOT NULL,
+ `AssignedTeacher` varchar(100) NOT NULL,
+ `Addedon` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+ PRIMARY KEY (`Serial_no`),
+ UNIQUE KEY `Serial_no` (`Serial_no`,`SubjectCode`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8
+
+
+CREATE TABLE `add_student` (
+ `Serial_no` int(20) NOT NULL AUTO_INCREMENT,
+ `Id` varchar(22) NOT NULL,
+ `Firstname` varchar(50) NOT NULL,
+ `Lastname` varchar(50) NOT NULL,
+ `Department` varchar(50) NOT NULL,
+ `Batch` varchar(20) NOT NULL,
+ `Semester` varchar(50) NOT NULL,
+ `Shift` varchar(20) NOT NULL,
+ `PhoneNumber` varchar(22) NOT NULL,
+ `Email` varchar(50) NOT NULL,
+ `Dateofbirth` date NOT NULL,
+ `Address` varchar(100) NOT NULL,
+ `Password` varchar(50) NOT NULL,
+ `Addedon` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+ PRIMARY KEY (`Serial_no`),
+ UNIQUE KEY `Id` (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8
+
+
+
+
+CREATE TABLE `add_schedule` (
+ `Serial_no` int(20) NOT NULL AUTO_INCREMENT,
+ `Batch` varchar(100) NOT NULL,
+ `TimePeriod` varchar(100) NOT NULL,
+ `Date` varchar(50) NOT NULL,
+ `Subject` varchar(100) NOT NULL,
+ `Addedon` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+ PRIMARY KEY (`Serial_no`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8
+
+
+CREATE TABLE `add_department` (
+ `Serial_no` int(20) NOT NULL AUTO_INCREMENT,
+ `DepartmentCode` varchar(50) NOT NULL,
+ `DepartmentFullName` varchar(100) NOT NULL,
+ `DepartmentShortName` varchar(50) NOT NULL,
+ PRIMARY KEY (`Serial_no`),
+ UNIQUE KEY `DepartmentCode` (`DepartmentCode`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8
+
+
+CREATE TABLE `add_batch` (
+ `Serial_no` int(20) NOT NULL AUTO_INCREMENT,
+ `BatchNumber` varchar(100) NOT NULL,
+ `StartingYear` year(4) NOT NULL,
+ `Addedon` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+ PRIMARY KEY (`Serial_no`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8
+
+
+
+CREATE TABLE `add_admin` (
+ `Serial_no` int(11) NOT NULL AUTO_INCREMENT,
+ `Id` varchar(22) NOT NULL,
+ `Firstname` varchar(50) NOT NULL,
+ `Lastname` varchar(50) NOT NULL,
+ `Department` varchar(50) NOT NULL,
+ `Batch` varchar(50) NOT NULL,
+ `Semester` varchar(50) NOT NULL,
+ `Shift` varchar(50) NOT NULL,
+ `PhoneNumber` int(22) NOT NULL,
+ `Email` varchar(50) NOT NULL,
+ `Dateofbirth` date NOT NULL,
+ `Address` varchar(100) NOT NULL,
+ `Password` varchar(50) NOT NULL,
+ PRIMARY KEY (`Serial_no`),
+ UNIQUE KEY `Id` (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8
